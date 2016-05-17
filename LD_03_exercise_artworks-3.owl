@@ -1,0 +1,280 @@
+@prefix : <http://www.sjm.org/artworks#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.sjm.org/artworks> .
+
+<http://www.sjm.org/artworks> rdf:type owl:Ontology .
+
+
+#################################################################
+#
+#    Object Properties
+#
+#################################################################
+
+
+###  http://www.sjm.org/artworks#created
+
+:created rdf:type owl:ObjectProperty .
+
+
+
+###  http://www.sjm.org/artworks#hasGender
+
+:hasGender rdf:type owl:ObjectProperty .
+
+
+
+###  http://www.sjm.org/artworks#hasNationality
+
+:hasNationality rdf:type owl:ObjectProperty .
+
+
+
+###  http://www.sjm.org/artworks#isHousedIn
+
+:isHousedIn rdf:type owl:ObjectProperty .
+
+
+
+###  http://www.sjm.org/artworks#spoke
+
+:spoke rdf:type owl:ObjectProperty .
+
+
+
+###  http://www.sjm.org/artworks#wasBornIn
+
+:wasBornIn rdf:type owl:ObjectProperty .
+
+
+
+###  http://www.sjm.org/artworks#workedIn
+
+:workedIn rdf:type owl:ObjectProperty .
+
+
+
+
+
+#################################################################
+#
+#    Data properties
+#
+#################################################################
+
+
+###  http://www.sjm.org/artworks#hasBirthDate
+
+:hasBirthDate rdf:type owl:DatatypeProperty .
+
+
+
+###  http://www.sjm.org/artworks#hasDeathDate
+
+:hasDeathDate rdf:type owl:DatatypeProperty .
+
+
+
+
+
+#################################################################
+#
+#    Classes
+#
+#################################################################
+
+
+###  http://www.sjm.org/artworks#Artist
+
+:Artist rdf:type owl:Class .
+
+
+
+###  http://www.sjm.org/artworks#Artwork
+
+:Artwork rdf:type owl:Class .
+
+
+
+###  http://www.sjm.org/artworks#Institution
+
+:Institution rdf:type owl:Class .
+
+
+
+
+
+#################################################################
+#
+#    Individuals
+#
+#################################################################
+
+
+###  http://www.sjm.org/artworks#Coyoacan
+
+:Coyoacan rdf:type owl:NamedIndividual ;
+          
+          rdfs:label "Coyoacán (Mexico)" .
+
+
+
+###  http://www.sjm.org/artworks#David
+
+:David rdf:type owl:NamedIndividual ;
+       
+       :isHousedIn :GalleriaDellAccademia .
+
+
+
+###  http://www.sjm.org/artworks#Europe
+
+:Europe rdf:type owl:NamedIndividual ;
+        
+        rdfs:label "Europe (Continent)" .
+
+
+
+###  http://www.sjm.org/artworks#FamilyTree
+
+:FamilyTree rdf:type owl:NamedIndividual ;
+            
+            rdfs:label "My Grandparents, My Parents, and I (Family Tree)" .
+
+
+
+###  http://www.sjm.org/artworks#Florence
+
+:Florence rdf:type owl:NamedIndividual ;
+          
+          rdfs:label "Florence"@en ,
+                     "Firenze"@it .
+
+
+
+###  http://www.sjm.org/artworks#FridaKahlo
+
+:FridaKahlo rdf:type owl:NamedIndividual ;
+            
+            rdfs:label "Kahlo, Frida" ;
+            
+            :hasBirthDate "1907-07-06"^^xsd:string ;
+            
+            :created :LoveEmbraceOfTtheUniverse .
+
+
+
+###  http://www.sjm.org/artworks#GabrieleMunter
+
+:GabrieleMunter rdf:type owl:NamedIndividual ;
+                
+                rdfs:label "Munter, Gabriele, 1877-1962" .
+
+
+
+###  http://www.sjm.org/artworks#GalleriaDellAccademia
+
+:GalleriaDellAccademia rdf:type owl:NamedIndividual .
+
+
+
+###  http://www.sjm.org/artworks#ItalianLangauge
+
+:ItalianLangauge rdf:type owl:NamedIndividual ;
+                 
+                 rdfs:label "Italian"@en ;
+                 
+                 rdfs:comment "This entity designates the Italian langauge" .
+
+
+
+###  http://www.sjm.org/artworks#ItalianNationality
+
+:ItalianNationality rdf:type owl:NamedIndividual ;
+                    
+                    rdfs:label "Italian"@en ;
+                    
+                    rdfs:comment "This entity designates Italian as a nationality" .
+
+
+
+###  http://www.sjm.org/artworks#Italy
+
+:Italy rdf:type owl:NamedIndividual .
+
+
+
+###  http://www.sjm.org/artworks#LoveEmbraceOfTtheUniverse
+
+:LoveEmbraceOfTtheUniverse rdf:type owl:NamedIndividual ;
+                           
+                           rdfs:label "The Love Embrace of the Universe" .
+
+
+
+###  http://www.sjm.org/artworks#Mexico
+
+:Mexico rdf:type owl:NamedIndividual ;
+        
+        rdfs:label "Mexico" .
+
+
+
+###  http://www.sjm.org/artworks#MexicoCity
+
+:MexicoCity rdf:type owl:NamedIndividual ;
+            
+            rdfs:label "Mexico City (Mexico)" .
+
+
+
+###  http://www.sjm.org/artworks#Michelangelo
+
+:Michelangelo rdf:type :Artist ,
+                       owl:NamedIndividual ;
+              
+              rdfs:label "Buonarotti, Michelangelo, 1475-1564"^^xsd:string ;
+              
+              :hasBirthDate "1475-03-06"^^xsd:string ;
+              
+              :hasDeathDate "1564-02-18"^^xsd:string ;
+              
+              :created :David ;
+              
+              :spoke :ItalianLangauge ;
+              
+              :hasNationality :ItalianNationality .
+
+
+
+###  http://www.sjm.org/artworks#NaiveArt
+
+:NaiveArt rdf:type owl:NamedIndividual ;
+          
+          rdfs:label "Naïve art" .
+
+
+
+###  http://www.sjm.org/artworks#NorthAndCentralAmerica
+
+:NorthAndCentralAmerica rdf:type owl:NamedIndividual ;
+                        
+                        rdfs:label "North and Central America (Continent)" .
+
+
+
+###  http://www.sjm.org/artworks#Rome
+
+:Rome rdf:type owl:NamedIndividual ;
+      
+      rdfs:comment "The city of Rome in Italy"@en .
+
+
+
+
+###  Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net
+
